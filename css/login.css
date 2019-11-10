@@ -1,0 +1,10 @@
+div.login-wrapper {
+  min-height: 100vh;
+  padding: 100px 50px;
+}
+
+div.login-wrapper h1 {
+  text-align: center;
+
+  margin: 20px auto;
+}

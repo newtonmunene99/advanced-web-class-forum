@@ -1,0 +1,25 @@
+div.unit_info {
+  padding: 20px 40px;
+  margin: 20px 10px;
+  background-color: white;
+  background-image: radial-gradient(#1184ffd8, #1183ff);
+  border-radius: 5px;
+}
+
+ul.actions {
+  margin: 20px auto;
+}
+
+div.post_wrapper {
+  padding: 20px;
+  margin: 20px 10px;
+  background-color: white;
+  transition: box-shadow 200ms ease-in;
+}
+
+div.post_wrapper:hover {
+  box-shadow: 0 0.5px 0 0 #ffffff inset, 0 1px 2px 0 #b3b3b3;
+}
+div.post_actions {
+  margin: 10px auto;
+}
