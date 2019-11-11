@@ -9,13 +9,14 @@ include_once("partials/header.php");
     LOGIN
     <small class="text-muted">ADVANCED WEB</small>
   </h1>
-  <form class="jumbotron">
+  <form class="jumbotron" name="loginForm">
     <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
+      <label for="email">Email address</label>
       <input
         type="email"
         class="form-control"
-        id="exampleInputEmail1"
+        id="email"
+        name="email"
         aria-describedby="emailHelp"
         placeholder="Enter email"
       />
@@ -24,11 +25,12 @@ include_once("partials/header.php");
       >
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
+      <label for="password">Password</label>
       <input
         type="password"
         class="form-control"
-        id="exampleInputPassword1"
+        id="password"
+        name="password"
         placeholder="Password"
       />
     </div>
@@ -36,9 +38,11 @@ include_once("partials/header.php");
       <a href="./register.php">Don't have an account?</a>
     </div>
   
-    <a class="btn btn-primary" href="./index.php">Login</a>
+    <button class="btn btn-primary" type="submit" name="loginbtn">Login</button>
   </form>
 </div>
+<script src="js/login.js"></script>
+
 <?php
 include_once("partials/footer.php");
 ?>

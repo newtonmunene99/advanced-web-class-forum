@@ -10,14 +10,6 @@ ul.actions {
   margin: 20px auto;
 }
 
-div.post_input_wrapper {
-  display: none;
-}
-
-div.post_input_wrapper textarea {
-  resize: none;
-}
-
 div.post_wrapper {
   padding: 20px;
   margin: 20px 10px;

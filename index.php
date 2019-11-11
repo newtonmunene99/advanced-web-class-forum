@@ -1,137 +1,47 @@
-<?php
-include_once "partials/header.php";
+<?php 
+include_once("partials/header.php");
 ?>
-<link rel="stylesheet" href="css/home.css" />
+<link rel="stylesheet" href="css/index.css">
 </head>
-<body>
-<div class="bg-light">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">Advanced Web</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarTogglerDemo02"
-      aria-controls="navbarTogglerDemo02"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link" href="./index.php"
-            >Home <span class="sr-only">(current)</span></a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./forum.php">Forum</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input
-          class="form-control mr-sm-2"
-          type="search"
-          placeholder="Search"
-        />
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
-          Search
-        </button>
-      </form>
-    </div>
-  </nav>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm">
-        <div class="container unit_info col">
-          <div class="row"><h6 class="text-light">CSC 101</h6></div>
-          <div class="row text-light">Unit Name</div>
-        </div>
-        <div class="container unit_info col">
-          <div class="row"><h6 class="text-light">Updates</h6></div>
-          <div class="row text-light">No Updates Available</div>
-        </div>
-      </div>
-      <div class="col-6">
-        <div class="post_input_wrapper container-fluid">
-          <div class="card">
-            <div class="card-header bg-light">
-              Write new post
-            </div>
-            <div class="card-body">
-              <form method="POST" action="post.php">
-                <div class="form-group">
-                  <textarea
-                  name="post_input_textarea"
-                    class="form-control"
-                    id="post_input"
-                    rows="3"
-                  ></textarea>
-                </div>
-                <button class="btn btn-primary text-right" type="submit" name="post_submit_btn">Create Post</button>
-              </form>
-            </div>
-          </div>
-        </div>
-        <?php
+<body >
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand" href="#">Advanced Web Forum</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-for ($i = 0; $i < 20; $i++) {
-    echo '<div class="post_wrapper container-fluid">
-        <div class="post_author row">
-          <div class="col-8">
-            <a href="#">
-              <h6>Newton Munene</h6>
-            </a>
-          </div>
-        </div>
-        <div class="post_body">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-          veritatis repellat odio nostrum beatae deleniti quidem voluptate
-          mollitia, nam amet.
-        </div>
-        <div class="post_actions row">
-          <div class="col">
-            <button type="button" class="btn btn-outline-primary">
-              10 views
-            </button>
-          </div>
-          <div class="col">
-            <button type="button" class="btn btn-outline-primary">
-              0 Upvotes
-            </button>
-          </div>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      
+    </ul>
+   
+  </div>
+</nav>
+  <div class="header-wrapper">
+    <div class="container">
+  <div class="row">
+    <div class="col-sm left">
+      <h3>
+        Advanced Web Forum
+      </h3>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus omnis est eligendi harum ad. Rerum dolorum sunt et laudantium tempore itaque dignissimos? Aut repellat quas eligendi blanditiis voluptates esse saepe quibusdam sequi tenetur, eum ullam consequatur ipsa aliquam? Aliquid dolores eveniet ratione magnam fuga nisi dolore ut sunt odit autem.</p>
+      <button type="button" class="btn btn-outline-primary">Learn more</button>
+    </div>
+    <div class="col-sm right">
+      <h3>Get started</h3>
+     <a  class="btn btn-primary btn-lg btn-block" href="./login.php" role="button">Already have an account?</a>
+<a  class="btn btn-outline-primary btn-lg btn-block" href="./register.php" role="button">Don't have an account?</a>
 
-          <div class="col">
-            <button type="button" class="btn btn-outline-primary">
-              0 Comments
-            </button>
-          </div>
-        </div>
-      </div>
-      ';}?>
     </div>
-    <div class="col-sm">
-      <div class="container">
-        <ul class="list-group list-group-flush actions">
-          <li class="list-group-item">Profile</li>
-          <li
-            class="list-group-item d-flex justify-content-between align-items-center"
-          >
-            Notifications
-            <span class="badge badge-primary badge-pill">14</span>
-          </li>
-          <li class="list-group-item">Students' directory</li>
-          <li class="list-group-item">Instructor Info</li>
-          <li class="list-group-item">Help</li>
-          <a href="./login.php" class="list-group-item">Logout</a>
-        </ul>
-      </div>
-    </div>
+    
   </div>
 </div>
+  </div>
 
 <?php
-include_once "partials/footer.php";
+include_once("partials/footer.php");
 ?>

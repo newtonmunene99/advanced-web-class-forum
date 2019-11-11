@@ -1,0 +1,32 @@
+div.header-wrapper {
+  min-height: 80vh;
+  width: 100%;
+  /* background-image: url("https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1566&q=80"); */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+}
+div.header-wrapper div {
+  width: 100%;
+  height: 100%;
+}
+div.header-wrapper div.left {
+  padding: 100px 30px;
+}
+div.header-wrapper div.left h3 {
+  padding: 20px 0;
+}
+div.header-wrapper div.left p {
+  text-align: justify;
+}
+div.header-wrapper div.right {
+  padding: 100px 30px;
+}
+div.header-wrapper div.right h3 {
+  padding: 20px 0;
+}
+div.header-wrapper div.right button {
+  margin: 20px 0;
+}

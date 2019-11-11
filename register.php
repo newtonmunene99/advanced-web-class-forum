@@ -9,13 +9,14 @@ include_once("partials/header.php");
     REGISTER
     <small class="text-muted">ADVANCED WEB</small>
   </h1>
-  <form class="jumbotron">
+  <form class="jumbotron"  name="registerForm">
     <div class="form-group">
       <label for="email">Email address</label>
       <input
         type="email"
         class="form-control"
         id="email"
+        name="email"
         aria-describedby="emailHelp"
         placeholder="Enter email"
       />
@@ -29,7 +30,7 @@ include_once("partials/header.php");
         type="text"
         class="form-control"
         id="name"
-       
+        name="name"
         placeholder="Enter name"
       />
     
@@ -40,6 +41,7 @@ include_once("partials/header.php");
         type="password"
         class="form-control"
         id="password"
+        name="password"
         placeholder="Password"
       />
     </div>
@@ -50,6 +52,7 @@ include_once("partials/header.php");
         type="password"
         class="form-control"
         id="password2"
+        name="password2"
         placeholder="Password"
       />
     </div>
@@ -57,9 +60,10 @@ include_once("partials/header.php");
       <a href="./login.php">Already have an account?</a>
     </div>
     
-    <a class="btn btn-primary" href="./index.php">Register</a>
+    <button class="btn btn-primary" type="submit" name="registerbtn">Register</a>
   </form>
 </div>
+<script src="js/register.js"></script>
 <?php
 include_once("partials/footer.php");
 ?>
