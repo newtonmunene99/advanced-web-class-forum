@@ -60,47 +60,13 @@ include 'session.php';
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm">
-          <div class="container unit_info col">
-            <div class="row"><h6 class="text-light">CSC 101</h6></div>
-            <div class="row text-light">Unit Name</div>
-          </div>
-          <div class="container unit_info col">
-            <div class="row"><h6 class="text-light">Updates</h6></div>
-            <div class="row text-light">No Updates Available</div>
-          </div>
+
         </div>
         <div class="col-6">
-          <div class="post_input_wrapper container-fluid">
-            <div class="card">
-              <div class="card-header bg-light">
-                Write new post
-              </div>
-              <div class="card-body">
-                <form method="POST" name="postForm">
-                  <div class="form-group">
-                    <textarea
-                      name="post_input_textarea"
-                      class="form-control"
-                      id="post_input"
-                      rows="3"
-                      required
-                    ></textarea>
-                  </div>
-                  <button
-                    class="btn btn-primary text-right"
-                    type="submit"
-                    name="post_submit_btn"
-                  >
-                    Create Post
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
+
           <?php
 $connection = mysqli_connect("localhost", "root", "", "csc316");
-
-$result = mysqli_query($connection, "SELECT * FROM post");
+$result = mysqli_query($connection, "SELECT * FROM post WHERE id='$_GET[postid]'");
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $userResult = mysqli_query($connection, "SELECT * FROM user WHERE id='$row[author]'");
@@ -119,21 +85,20 @@ if (mysqli_num_rows($result) > 0) {
                         </div>
                         <div class='post_actions row'>
                           <div class='col'>
-                           <a href='./post.php?postid=$row[id]' class='btn btn-outline-primary'>
-                             $row[views] views
-                            </a>
-
+                            <button type='button' class='btn btn-outline-primary'>
+                               $row[views] views
+                            </button>
                           </div>
                           <div class='col'>
-                            <button type='button' class='btn btn-outline-primary'>
-                              $row[upvotes] Upvotes
+                            <button type='button' class='btn btn-outline-primary' id='upvotebtn'>
+                               $row[upvotes] Upvotes
                             </button>
                           </div>
 
                           <div class='col'>
-                            <a href='./post.php?postid=$row[id]' class='btn btn-outline-primary'>
-                             $row[comments] Comments
-                            </a>
+                            <button type='button' class='btn btn-outline-primary'>
+                              $row[comments] Comments
+                            </button>
                           </div>
                         </div>
                       </div>
@@ -146,23 +111,68 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 ?>
+        <div class="post_input_wrapper container-fluid">
+            <div class="card">
+              <div class="card-header bg-light">
+                Write new comment
+              </div>
+              <div class="card-body">
+                <form method="POST" name="postForm">
+                  <div class="form-group">
+                    <textarea
+                      name="comment_input_textarea"
+                      class="form-control"
+                      id="post_input"
+                      rows="3"
+                      required
+                    ></textarea>
+                  </div>
+                  <button
+                    class="btn btn-primary text-right"
+                    type="submit"
+                    name="post_submit_btn"
+                  >
+                    Create Comment
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <?php
+$connection = mysqli_connect("localhost", "root", "", "csc316");
+
+$result = mysqli_query($connection, "SELECT * FROM comment WHERE post='$_GET[postid]'");
+if (mysqli_num_rows($result) > 0) {
+    while ($row = mysqli_fetch_assoc($result)) {
+        $userResult = mysqli_query($connection, "SELECT * FROM user WHERE id='$row[author]'");
+        if (mysqli_num_rows($userResult) == 1) {
+            while ($userRow = mysqli_fetch_assoc($userResult)) {
+                echo "<div class='post_wrapper container-fluid'>
+                        <div class='post_author row'>
+                          <div class='col-8'>
+                            <a href='#'>
+                              <h6>$userRow[name]</h6>
+                            </a>
+                          </div>
+                        </div>
+                        <div class='post_body'>
+                          $row[body]
+                        </div>
+
+                      </div>
+                      "
+                ;
+            }}
+
+    }
+
+}
+
+?>
       </div>
       <div class="col-sm">
-        <div class="container">
-          <ul class="list-group list-group-flush actions">
-            <li class="list-group-item"><?php echo $_SESSION['user']['name'] ?></li>
-            <li
-              class="list-group-item d-flex justify-content-between align-items-center"
-            >
-              Notifications
-              <span class="badge badge-primary badge-pill">14</span>
-            </li>
 
-             <li id="logoutbtn"  class="list-group-item">Logout</li>
-
-          </ul>
         </div>
-      </div>
     </div>
 
     <script
@@ -180,6 +190,6 @@ if (mysqli_num_rows($result) > 0) {
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="js/home.js"></script>
+    <script src="js/post.js"></script>
   </body>
 </html>

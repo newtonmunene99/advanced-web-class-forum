@@ -1,3 +1,13 @@
+<?php
+include 'control.php'; // Includes Login Script
+
+if (isset($_SESSION['user'])) {
+    echo "logged in";
+    header("location: home.php");
+} else {
+    echo "Not logged in";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

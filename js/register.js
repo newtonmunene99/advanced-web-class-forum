@@ -15,7 +15,7 @@ $(document).ready(function() {
       // let data = JSON.parse(response);
       console.log(`registered ${registered}`);
       if (registered) {
-        window.location.replace("./home.php");
+        window.location.replace("./login.php");
       } else {
         alert("Failed to register");
       }
