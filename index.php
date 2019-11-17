@@ -2,10 +2,7 @@
 include 'control.php'; // Includes Login Script
 
 if (isset($_SESSION['user'])) {
-    echo "logged in";
     header("location: home.php");
-} else {
-    echo "Not logged in";
 }
 ?>
 <!DOCTYPE html>
@@ -59,8 +56,7 @@ if (isset($_SESSION['user'])) {
               Advanced Web Forum
             </h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Voluptatibus omnis est eligendi harum ad. Rerum dolorum sunt et
+              This is a forum where students can post questions and get comments and answers to their questions. Voluptatibus omnis est eligendi harum ad. Rerum dolorum sunt et
               laudantium tempore itaque dignissimos? Aut repellat quas eligendi
               blanditiis voluptates esse saepe quibusdam sequi tenetur, eum
               ullam consequatur ipsa aliquam? Aliquid dolores eveniet ratione

@@ -26,8 +26,9 @@ if ($conn) {
         $email = mysql_real_escape_string($email);
         $name = mysql_real_escape_string($name);
         $password = mysql_real_escape_string($password);
+        $hash = password_hash($password, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO user(email,name,password) VALUES('$email','$name','$password')";
+        $sql = "INSERT INTO user(email,name,password) VALUES('$email','$name','$hash')";
 
         $processQuery = mysqli_query($conn, $sql);
         if ($processQuery) {
@@ -44,12 +45,13 @@ if ($conn) {
 
         if (mysqli_num_rows($processQuery) == 1) {
             $row = mysqli_fetch_assoc($processQuery);
-
-            if ($row["password"] === $password) {
+            if (password_verify($password, $row["password"])) {
                 $_SESSION['user'] = $row;
                 echo "Authenticated";
+
             } else {
                 echo "Invalid password";
+
             }
         } else {
             echo "This email is not registered";

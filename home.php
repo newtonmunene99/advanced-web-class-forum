@@ -41,11 +41,8 @@ include 'session.php';
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./forum.php">Forum</a>
-          </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <!-- <form class="form-inline my-2 my-lg-0">
           <input
             class="form-control mr-sm-2"
             type="search"
@@ -54,15 +51,17 @@ include 'session.php';
           <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
             Search
           </button>
-        </form>
+        </form> -->
       </div>
     </nav>
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm">
           <div class="container unit_info col">
-            <div class="row"><h6 class="text-light">CSC 101</h6></div>
-            <div class="row text-light">Unit Name</div>
+            <div class="row"><h6 class="text-light"><?php echo $_SESSION['user']['name'] ?>
+</h6></div>
+            <div class="row text-light"><?php echo $_SESSION['user']['email'] ?>
+</div>
           </div>
           <div class="container unit_info col">
             <div class="row"><h6 class="text-light">Updates</h6></div>

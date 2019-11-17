@@ -9,7 +9,12 @@ div.unit_info {
 ul.actions {
   margin: 20px auto;
 }
-
+#logoutbtn {
+  color: #1183ff;
+}
+#logoutbtn:hover {
+  text-decoration: underline;
+}
 div.post_wrapper {
   padding: 20px;
   margin: 20px 10px;
