@@ -5,12 +5,8 @@ $(document).ready(function() {
       {
         logout: {}
       },
-      function(loggedout) {
-        if (loggedout == 1) {
-          window.location.replace("./login.php");
-        } else {
-          console.log("Failed to logout");
-        }
+      function() {
+        window.location.replace("./login.php");
       }
     );
   });
